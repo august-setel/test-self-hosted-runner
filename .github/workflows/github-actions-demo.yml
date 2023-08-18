@@ -30,4 +30,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           ./tesh.sh
+          echo ENV["LALA"]
       - run: echo "🍏 This job's status is ${{ job.status }}."
