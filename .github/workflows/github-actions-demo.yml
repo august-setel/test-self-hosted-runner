@@ -29,5 +29,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          ls
+          ./tesh.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
