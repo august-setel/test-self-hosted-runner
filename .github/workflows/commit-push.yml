@@ -40,7 +40,7 @@ jobs:
       - run: |
           echo "🍏 This job's status is ${{ job.status }}. ${{github.run_number}}"
           echo ${{ vars.BUILD_NUMBER }}
-          ${{ vars.BUILD_NUMBER }} = ${{ vars.BUILD_NUMBER }} + 1
+          ${{ vars.BUILD_NUMBER = 0}}
           echo ${{ vars.BUILD_NUMBER }}
       - name: List new content
         run: |
