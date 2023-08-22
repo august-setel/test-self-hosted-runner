@@ -39,6 +39,8 @@ jobs:
           fastlane custom_lane
       - run: |
           echo ${{ vars.BUILD_NUMBER }}
+          run echo "BUILD_NUMBER=99999" >> $GITHUB_ENV
+          echo ${{ vars.BUILD_NUMBER }}
       - name: List new content
         run: |
           cat new.txt
