@@ -38,9 +38,10 @@ jobs:
         run: |
           fastlane custom_lane
       - run: |
-          echo "🍏 This job's status is ${{ job.status }}. ${{github.run_number}}"
           echo ${{ vars.BUILD_NUMBER }}
-          ${{ vars.BUILD_NUMBER = 0}}
+        env: |
+          BUILD_NUMBER: 0
+      - run: |
           echo ${{ vars.BUILD_NUMBER }}
       - name: List new content
         run: |
