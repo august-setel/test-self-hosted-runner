@@ -28,7 +28,9 @@ jobs:
       - if: ${{ steps.cache-module.outputs.cache-hit != 'true' }}
         name: List the state of node modules
         continue-on-error: true
-        run: echo "not here august"
+        run: |
+          ./tesh.sh
+          echo "not here august"
 
       - name: Run fastlane
         run: |
