@@ -39,8 +39,10 @@ jobs:
           fastlane custom_lane
       - run: |
           echo ${{ vars.BUILD_NUMBER }}
-          echo "BUILD_NUMBER=99999" >> $BUILD_NUMBER
-          echo ${{ vars.BUILD_NUMBER }}
+          echo "The job_id is: $GITHUB_JOB"  
+          echo "The id of this action is: $GITHUB_ACTION" 
+          echo "The run id is: $GITHUB_RUN_ID" 
+          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
       - name: List new content
         run: |
           cat new.txt
