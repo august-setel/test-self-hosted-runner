@@ -20,7 +20,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: new.text
+          path: ~/new.text
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.text') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.text') }}
@@ -29,8 +29,10 @@ jobs:
         name: List the state of node modules
         continue-on-error: true
         run: |
+          ls
           ./test.sh
           echo "not here august"
+          ls
 
       - name: Run fastlane
         run: |
