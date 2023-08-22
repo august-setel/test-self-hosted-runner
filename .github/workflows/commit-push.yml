@@ -37,6 +37,6 @@ jobs:
       - name: Run fastlane
         run: |
           fastlane custom_lane
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}. ${{github.run_number}}"
 
     
