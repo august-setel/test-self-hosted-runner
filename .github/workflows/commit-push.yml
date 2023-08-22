@@ -21,9 +21,9 @@ jobs:
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
           path: ~/new.txt
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.text') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.txt') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.text') }}
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.txt') }}
 
       - if: ${{ steps.cache-module.outputs.cache-hit != 'true' }}
         name: List the state of node modules
