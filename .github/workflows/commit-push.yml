@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('new.txt') }}
 
       - if: ${{ steps.cache-module.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+        name: Generate test.sh
         continue-on-error: true
         run: |
           ls
@@ -39,4 +39,7 @@ jobs:
           fastlane custom_lane
       - run: echo "🍏 This job's status is ${{ job.status }}. ${{github.run_number}}"
 
+      - name: List new content
+        run: |
+          cat new.txt
     
