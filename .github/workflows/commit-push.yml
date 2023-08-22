@@ -37,7 +37,7 @@ jobs:
       - name: Run fastlane
         run: |
           fastlane custom_lane
-      - run: echo "$BUILD_NUMBER"
+      - run: echo ${{ vars.BUILD_NUMBER }}
         env: |
           BUILD_NUMBER: ${{ vars.BUILD_NUMBER }}
       - run: |
