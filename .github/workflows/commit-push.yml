@@ -31,7 +31,7 @@ jobs:
         shell: bash
         run: |
           ls
-          ./tesh.sh
+          ${{ github.workspace }} ./tesh.sh
           echo "not here august"
 
       - name: Run fastlane
