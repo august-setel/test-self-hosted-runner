@@ -9,5 +9,5 @@ jobs:
       - run: echo "🎉 The job was manually triggered by a ${{ github.event_name }} event."
       - name: Run fastlane
         run: |
-          fastlane increase_build_number number:GITHUB_RUN_NUMBER
+          fastlane increase_build_number number:$GITHUB_RUN_NUMBER
       - run: echo "🍏 This job's status is ${{ job.status }}."
