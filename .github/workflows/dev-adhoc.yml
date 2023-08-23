@@ -4,12 +4,11 @@ on:
   workflow_dispatch:
 jobs: 
   call-build-setup:
-    uses: ./.github/workflows/build-setup.yml
+    uses: .github/workflows/build-setup.yml
   build-dev-adhoc:
     runs-on: [self-hosted, ARM64]
     steps:
       - name: Run fastlane
-        working-directory: ./Setel
         run: |
-          fastlane setup_build number:$GITHUB_RUN_NUMBER
+          fastlane increase_build_number number:$GITHUB_RUN_NUMBER
       - run: echo "🍏 This job's status is ${{ job.status }}."
