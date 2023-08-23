@@ -1,5 +1,6 @@
 name: No Trigger
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: []
 jobs:
   Some-Actions:
     runs-on: [self-hosted, ARM64]
