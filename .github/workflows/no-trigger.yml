@@ -1,5 +1,5 @@
 name: No Trigger
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is trigger manually
 on: 
   workflow_dispatch:
 jobs:
@@ -7,4 +7,7 @@ jobs:
     runs-on: [self-hosted, ARM64]
     steps:
       - run: echo "🎉 The job was manually triggered by a ${{ github.event_name }} event."
+      - name: Run fastlane
+        run: |
+          fastlane increase_build_number number:GITHUB_RUN_NUMBER
       - run: echo "🍏 This job's status is ${{ job.status }}."

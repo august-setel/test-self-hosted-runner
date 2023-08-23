@@ -21,4 +21,8 @@ platform :ios do
     puts "syalalallalala"
     # add actions here: https://docs.fastlane.tools/actions
   end
+  lane :increase_build_number do |options|
+    base_number = 50000 + options[:number].chomp.to_i
+    puts base_number
+  end
 end
