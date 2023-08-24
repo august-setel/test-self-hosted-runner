@@ -1,7 +1,7 @@
 name: Build Setup
 run-name: triggered manually by ${{ github.actor }}
 on: 
-  workflow_dispatch:
+  workflow_call:
 jobs:
   build-setup:
     runs-on: [self-hosted, ARM64]
