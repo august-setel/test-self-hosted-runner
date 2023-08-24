@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs: 
   call-build-setup:
-    uses: august-setel/test-self-hosted-runner/.github/workflows/build-setup.yml@main
+    uses: ./.github/workflows/build-setup.yml@main
   build-dev-adhoc:
     runs-on: [self-hosted, ARM64]
     steps:
