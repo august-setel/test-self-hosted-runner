@@ -7,7 +7,7 @@ jobs:
     name: A job to say hello
     steps:
       - name: Check out repository code
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
       - id: foo
         uses: ./.github/actions/hello-action.yml
         with:
