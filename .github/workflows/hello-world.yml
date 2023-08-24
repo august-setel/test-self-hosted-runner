@@ -1,4 +1,9 @@
-hello_world_job:
+name: Hello world
+run-name: triggered manually by ${{ github.actor }}
+on: 
+  workflow_dispatch:
+jobs: 
+  hello_world_job:
     runs-on: [self-hosted, ARM64]
     name: A job to say hello
     steps:
