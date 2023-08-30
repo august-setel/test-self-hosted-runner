@@ -1,6 +1,15 @@
 name: No Trigger
 run-name: ${{ github.actor }} is trigger manually
 on: 
+  workflow_call:
+    inputs:
+      lane:
+        required: true
+        type: choice
+        description: What fastlane to execute
+        options: 
+        - fastlane increase_build_number
+        - echo "hi"
   workflow_dispatch:
     inputs:
       lane:
