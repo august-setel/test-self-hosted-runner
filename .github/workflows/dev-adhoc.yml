@@ -9,4 +9,4 @@ jobs:
       pull-requests: write
     uses: ./.github/workflows/no-trigger.yml
     with:
-      lane: fastlane increase_build_number
+      lane: 'fastlane increase_build_number'
