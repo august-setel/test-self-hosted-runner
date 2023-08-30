@@ -8,6 +8,7 @@ on:
         description: What fastlane to execute
         options: 
         - fastlane increase_build_number number:$GITHUB_RUN_NUMBER
+        - fastlane increase_build_number number:$GITHUB_RUN_NUMBER
       message:
         required: true
 jobs:
