@@ -2,6 +2,14 @@ name: No Trigger
 run-name: ${{ github.actor }} is trigger manually
 on: 
   workflow_dispatch:
+    inputs:
+      name:
+        type: fastlane choice
+        description: What fastlane to execute
+        options: 
+        - fastlane increase_build_number number:$GITHUB_RUN_NUMBER
+      message:
+        required: true
 jobs:
   Some-Actions:
     runs-on: [self-hosted, ARM64]
@@ -13,5 +21,5 @@ jobs:
       - run: echo "🎉 The job was manually triggered by a ${{ github.event_name }} event."
       - name: Run fastlane
         run: |
-          fastlane increase_build_number number:$GITHUB_RUN_NUMBER
+          ${{ github.event.inputs.message }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
