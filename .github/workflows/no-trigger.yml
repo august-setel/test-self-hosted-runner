@@ -11,11 +11,8 @@ on:
     inputs:
       lane:
         required: true
-        type: choice
+        type: string
         description: What fastlane to execute
-        options: 
-        - fastlane increase_build_number
-        - echo "hi"
 jobs:
   Some-Actions:
     runs-on: [self-hosted, ARM64]
