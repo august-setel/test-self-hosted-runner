@@ -5,11 +5,8 @@ on:
     inputs:
       lane:
         required: true
-        type: choice
+        type: string
         description: What fastlane to execute
-        options: 
-        - fastlane increase_build_number
-        - echo "hi"
   workflow_dispatch:
     inputs:
       lane:
