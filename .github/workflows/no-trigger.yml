@@ -8,7 +8,7 @@ on:
         type: choice
         description: What fastlane to execute
         options: 
-        - fastlane increase_build_number number:$GITHUB_RUN_NUMBER
+        - fastlane increase_build_number
         - echo "hi"
 jobs:
   Some-Actions:
@@ -21,5 +21,5 @@ jobs:
       - run: echo "🎉 The job was manually triggered by a ${{ github.event_name }} event."
       - name: Run fastlane
         run: |
-          ${{ github.event.inputs.lane }}
+          ${{ github.event.inputs.lane }} number:$GITHUB_RUN_NUMBER
       - run: echo "🍏 This job's status is ${{ job.status }}."
