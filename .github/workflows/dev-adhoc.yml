@@ -6,4 +6,4 @@ jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/no-trigger.yml
     with:
-      lane: fastlane increase_build_number
+      lane: fastlane increase_build_number number:$GITHUB_RUN_NUMBER
